@@ -6,6 +6,7 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 - ./node_modules/protractor/bin/install_selenium_standalone
 - java -jar selenium/selenium-server-standalone-2.35.0.jar -Dwebdriver.chrome.driver=./selenium/chromedriver &
+- sleep 3
 script:
 - "lineman spec-ci"
 - "lineman grunt spec-e2e"
