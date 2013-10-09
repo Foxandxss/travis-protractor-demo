@@ -1,6 +1,9 @@
 language: node_js
 node_js:
 - 0.10
+before_script:
+- ./node_modules/protractor/bin/install_selenium_standalone
+- java -jar selenium/selenium-server-standalone-2.35.0.jar -Dwebdriver.chrome.driver=./selenium/chromedriver &
 script:
 - "lineman spec-ci"
 - "lineman grunt spec-e2e"
